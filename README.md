@@ -1,78 +1,55 @@
-# King Housing Nav
+# Decoded Housing Version 0.2
 
-Decoded Housing MVP: a calm housing counselor triage and follow-through system for King County housing navigation.
+Decoded Housing Version 0.2 is a free static prototype for a housing counselor triage, planning, follow-through, and stay-housed tool.
 
-Core promise: Get housed. Stay housed.
+It is not a directory, portal, apartment listing site, dashboard-first app, or search-first experience. The prototype starts with mode choice, checks safety, asks one question at a time, builds a live My Housing Plan, then shows scripts, checklists, follow-up tools, and sample matched resources inside the plan.
 
-This MVP is intentionally not a directory, portal, apartment listing site, or resource-first website. It starts with safety, builds a housing plan, gives exact phone scripts, and saves call logs on the device with localStorage.
+## Static no-build prototype
 
-## Routes
+This repository is designed to run from the root as a plain static site.
 
-| Route | Purpose |
-|---|---|
-| `/` | Counselor intake start. No menu before intake. |
-| `/intake` | Step-by-step safety, status, deadline, and barrier assessment. |
-| `/plan` | Generated My Housing Plan with pathways, scripts, checklists, deadlines, and proof prompts. |
-| `/script/:scriptId` | Mobile-friendly teleprompter for phone scripts. |
-| `/call-log` | Call log form and saved call history. |
+Required files:
 
-## localStorage schema
+- `index.html`
+- `README.md`
 
-Storage key: `decodedHousing.mvp.v1`
+No build tools are required. There is no npm, Vite, React, Tailwind, Supabase, login, AI chat, document upload, database import, or server dependency.
 
-```ts
-interface SavedState {
-  intake: {
-    safety: Record<string, string>;
-    housingStatus?: string;
-    deadlines: Record<string, string>;
-    barriers: string[];
-  };
-  plan?: HousingPlan;
-  savedScripts: string[];
-  callLogs: CallLogEntry[];
-}
-```
+## How to open
 
-## Sample data
+Open `index.html` directly in a browser.
 
-The app includes sample King County-oriented pathway and script content for:
+For GitHub Pages, publish from the `main` branch root. GitHub Pages can serve the root `index.html` without any build step.
 
+## What is included
+
+- two-mode opening: self-help or helping someone else
+- safety-first triage
+- one-question-at-a-time intake
+- live My Housing Plan
+- pathway lanes
 - Shelter Survival Plan
+- Coordinated Entry Decoder
 - Voucher Lease-Up Tool
+- ARCH / East King County Affordable Housing Tool
 - Notice Triage Tool
-- ARCH / Affordable Housing Tool
-- Basic Needs Stabilization Tool
 - Barrier-Clearing Checklist
-- Stay Housed Plan starter
+- Phone Script System
+- Teleprompter Mode
+- Call Log
+- Reality Notes
+- Sample matched resource cards inside the plan only
+- Warm Handoff Summary
+- Print plan
+- Start over
+- Continue saved plan
+- What changed since last time?
+- localStorage persistence
 
-All resource-like information is sample-labeled and should be confirmed before action.
+## Important limits
 
-## Run locally
+This is a prototype and does not guarantee housing, shelter, eligibility, availability, funding, or landlord participation.
 
-```bash
-npm install
-npm run dev
-```
+This is not legal advice. For notices, eviction cases, discrimination concerns, or court deadlines, contact legal aid or a qualified advocate.
 
-Open the Vite URL, usually `http://localhost:5173`.
-
-## Limitations
-
-- localStorage only
-- no login
-- no document upload
-- no AI chat
-- no live resource verification
-- no legal advice
-- no property search or application submission
-
-## Next build
-
-1. Full application tracker.
-2. Waitlist and ARCH property tracker.
-3. Evidence/proof timeline.
-4. Rights trigger cards.
-5. Full CE Decoder and Notice Triage workflows.
-6. Stay-housed reminders.
-7. Spanish-first multilingual copy pass.
+All resource cards are samples. Call programs directly to confirm hours, availability, eligibility, intake steps, and current contact information before acting.
