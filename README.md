@@ -39,6 +39,7 @@ To publish with GitHub Pages, serve the repository from the `main` branch root a
 - phone scripts
 - teleprompter mode
 - call log
+- Warm Handoff Summary for navigators, legal aid workers, or support people
 - proof and follow-up capture
 - localStorage persistence
 - print plan
