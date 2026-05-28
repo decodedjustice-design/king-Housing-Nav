@@ -1,78 +1,57 @@
-# King Housing Nav
+# Decoded Housing - Self-Help Housing Counselor MVP
 
-Decoded Housing MVP: a calm housing counselor triage and follow-through system for King County housing navigation.
+Decoded Housing Self-Help MVP is a free static prototype for one person using a phone to build a housing plan.
 
 Core promise: Get housed. Stay housed.
 
-This MVP is intentionally not a directory, portal, apartment listing site, or resource-first website. It starts with safety, builds a housing plan, gives exact phone scripts, and saves call logs on the device with localStorage.
+The experience follows:
 
-## Routes
+Safety -> housing status -> deadline -> household -> barriers -> strengths -> location -> My Housing Plan
 
-| Route | Purpose |
-|---|---|
-| `/` | Counselor intake start. No menu before intake. |
-| `/intake` | Step-by-step safety, status, deadline, and barrier assessment. |
-| `/plan` | Generated My Housing Plan with pathways, scripts, checklists, deadlines, and proof prompts. |
-| `/script/:scriptId` | Mobile-friendly teleprompter for phone scripts. |
-| `/call-log` | Call log form and saved call history. |
+## Static no-build version
 
-## localStorage schema
+This branch is intentionally static and GitHub Pages-ready.
 
-Storage key: `decodedHousing.mvp.v1`
+Required files:
 
-```ts
-interface SavedState {
-  intake: {
-    safety: Record<string, string>;
-    housingStatus?: string;
-    deadlines: Record<string, string>;
-    barriers: string[];
-  };
-  plan?: HousingPlan;
-  savedScripts: string[];
-  callLogs: CallLogEntry[];
-}
-```
+- `index.html`
+- `README.md`
 
-## Sample data
+There are no build tools and no app framework dependencies.
 
-The app includes sample King County-oriented pathway and script content for:
+Do not use npm, Vite, React, Tailwind, Supabase, login, AI chat, document upload, full database import, or a resource directory for this MVP.
 
-- Shelter Survival Plan
-- Voucher Lease-Up Tool
-- Notice Triage Tool
-- ARCH / Affordable Housing Tool
-- Basic Needs Stabilization Tool
-- Barrier-Clearing Checklist
-- Stay Housed Plan starter
+## How to run
 
-All resource-like information is sample-labeled and should be confirmed before action.
+Open `index.html` directly in any browser.
 
-## Run locally
+To publish with GitHub Pages, serve the repository from the `main` branch root after review and merge.
 
-```bash
-npm install
-npm run dev
-```
+## What is included
 
-Open the Vite URL, usually `http://localhost:5173`.
+- Self-Help Mode only
+- safety-first first screen
+- one-question-at-a-time intake
+- live My Housing Plan
+- pathway logic for Shelter Survival, Notice Triage, Voucher Lease-Up, ARCH / Affordable Housing, Barrier-Clearing, Basic Needs Stabilization, and Stay-Housed Starter
+- structured `sampleResources` placeholder for the future Housing_Decoded workbook import
+- matched sample resources only inside My Housing Plan
+- phone scripts
+- teleprompter mode
+- call log
+- Warm Handoff Summary for navigators, legal aid workers, or support people
+- proof and follow-up capture
+- localStorage persistence
+- print plan
+- start over
+- continue saved plan
 
-## Limitations
+## Important limits
 
-- localStorage only
-- no login
-- no document upload
-- no AI chat
-- no live resource verification
-- no legal advice
-- no property search or application submission
+This is not a directory and does not include search or browse pages.
 
-## Next build
+This is not legal advice. For notices, eviction cases, discrimination concerns, or court deadlines, contact legal aid or a qualified advocate.
 
-1. Full application tracker.
-2. Waitlist and ARCH property tracker.
-3. Evidence/proof timeline.
-4. Rights trigger cards.
-5. Full CE Decoder and Notice Triage workflows.
-6. Stay-housed reminders.
-7. Spanish-first multilingual copy pass.
+This prototype does not guarantee housing, shelter, funding, eligibility, landlord participation, or availability.
+
+All resource cards are sample data. Call programs directly to confirm hours, availability, eligibility, intake steps, and current contact information before relying on them.
