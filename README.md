@@ -4,9 +4,9 @@ Decoded Housing Self-Help MVP is a free static prototype for one person using a 
 
 Core promise: Get housed. Stay housed.
 
-The experience follows:
+The product follows a housing navigator workflow:
 
-Safety -> housing status -> deadline -> household -> barriers -> strengths -> location -> My Housing Plan
+stabilize -> assess -> prioritize -> plan -> act -> follow up -> adjust
 
 ## Static no-build version
 
@@ -30,31 +30,35 @@ To publish with GitHub Pages, serve the repository from the `main` branch root a
 ## What is included
 
 - Self-Help Mode only
-- safety-first first screen
-- one-question-at-a-time intake
-- live My Housing Plan
-- structured localStorage persistence using the key `decodedHousingSelfHelpMvp`
-- backend-ready data sections for profile, safety, contact safety, current situation, deadlines, household, disability/accommodation, voucher/subsidy, income/benefits, housing history, barriers, strengths, preferences, plan, call logs, saved scripts, saved resources, follow-ups, evidence events, and handoff summary
-- pathway logic for Shelter Survival, Notice Triage, Voucher Lease-Up, ARCH / Affordable Housing, Barrier-Clearing, Basic Needs Stabilization, Disability / Accommodation, Safety / Private Contact, and Stay-Housed Starter
-- structured `sampleResources` placeholder for the future Housing_Decoded workbook import
+- research-aligned housing navigator triage
+- safety-first intake
+- one-question-at-a-time flow
+- household size and children intake
+- disability/accommodation support without diagnosis or medical record collection
+- safety/private contact intake with neutral wording
+- voucher/subsidy intake and expiration reminder
+- income/benefits stability intake
+- optional housing history intake
+- grouped barrier assessment
+- compact My Housing Plan with Top Priority and Next 3 Actions
+- active pathway logic for Shelter Survival, Coordinated Entry Preparation, Notice Triage, Voucher Lease-Up, ARCH / Affordable Housing, Barrier-Clearing, Basic Needs Stabilization, Disability / Accommodation, Safety / Private Contact, and Stay-Housed Starter
 - matched sample resources only inside My Housing Plan
 - phone scripts
 - teleprompter mode
-- call log stored as structured objects
-- saved scripts referencing `scriptType`
-- saved resources referencing `resourceId`
-- reusable follow-up objects
+- call log
+- follow-ups
 - evidence/proof events
-- Warm Handoff Summary generated from the structured saved data
-- proof and follow-up capture
+- Warm Handoff Summary
 - print plan
-- start over
 - continue saved plan
-- What changed since last time? update flow
+- What changed since last time? flow
+- start over
 
 ## localStorage and future backend structure
 
-The MVP currently saves only to `localStorage` on the user's device.
+The MVP currently saves only to `localStorage` on the user's device using the key:
+
+`decodedHousingSelfHelpMvp`
 
 No personal data is sent to a server in this static MVP.
 
@@ -87,7 +91,7 @@ Users can choose **Start over** to clear locally saved data from this device.
 
 ## Important limits
 
-This is not a directory and does not include search or browse pages.
+Decoded Housing is not a directory, dashboard, or resource list.
 
 This is not legal advice. For notices, eviction cases, discrimination concerns, or court deadlines, contact legal aid or a qualified advocate.
 
