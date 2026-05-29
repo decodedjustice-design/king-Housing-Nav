@@ -33,18 +33,57 @@ To publish with GitHub Pages, serve the repository from the `main` branch root a
 - safety-first first screen
 - one-question-at-a-time intake
 - live My Housing Plan
-- pathway logic for Shelter Survival, Notice Triage, Voucher Lease-Up, ARCH / Affordable Housing, Barrier-Clearing, Basic Needs Stabilization, and Stay-Housed Starter
+- structured localStorage persistence using the key `decodedHousingSelfHelpMvp`
+- backend-ready data sections for profile, safety, contact safety, current situation, deadlines, household, disability/accommodation, voucher/subsidy, income/benefits, housing history, barriers, strengths, preferences, plan, call logs, saved scripts, saved resources, follow-ups, evidence events, and handoff summary
+- pathway logic for Shelter Survival, Notice Triage, Voucher Lease-Up, ARCH / Affordable Housing, Barrier-Clearing, Basic Needs Stabilization, Disability / Accommodation, Safety / Private Contact, and Stay-Housed Starter
 - structured `sampleResources` placeholder for the future Housing_Decoded workbook import
 - matched sample resources only inside My Housing Plan
 - phone scripts
 - teleprompter mode
-- call log
-- Warm Handoff Summary for navigators, legal aid workers, or support people
+- call log stored as structured objects
+- saved scripts referencing `scriptType`
+- saved resources referencing `resourceId`
+- reusable follow-up objects
+- evidence/proof events
+- Warm Handoff Summary generated from the structured saved data
 - proof and follow-up capture
-- localStorage persistence
 - print plan
 - start over
 - continue saved plan
+- What changed since last time? update flow
+
+## localStorage and future backend structure
+
+The MVP currently saves only to `localStorage` on the user's device.
+
+No personal data is sent to a server in this static MVP.
+
+The saved localStorage schema mirrors the future backend data model. This is intentional: when backend storage is added later, users should not have to repeat the same intake questions just because the storage layer changed.
+
+The stored object includes:
+
+- `profile`
+- `safety`
+- `contactSafety`
+- `currentSituation`
+- `deadlines`
+- `household`
+- `disabilityAccommodation`
+- `voucherSubsidy`
+- `incomeBenefits`
+- `housingHistory`
+- `barriers`
+- `strengths`
+- `preferences`
+- `plan`
+- `callLogs`
+- `savedScripts`
+- `savedResources`
+- `followUps`
+- `evidenceEvents`
+- `handoffSummary`
+
+Users can choose **Start over** to clear locally saved data from this device.
 
 ## Important limits
 
